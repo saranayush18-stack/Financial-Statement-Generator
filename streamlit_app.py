@@ -378,9 +378,9 @@ elif st.session_state.stage == "results":
         st.write(f"Profit After Tax: ₹{pnl.profit_after_tax_cy:,.2f}")
 
     with tab_cf:
-        st.write(f"Net Cash from Operating Activities: ₹{cash_flow.net_cash_from_operating:,.2f}")
-        st.write(f"Net Cash from Investing Activities: ₹{cash_flow.net_cash_from_investing:,.2f}")
-        st.write(f"Net Cash from Financing Activities: ₹{cash_flow.net_cash_from_financing:,.2f}")
+        st.write(f"Net Cash from Operating Activities: ₹{cash_flow.cash_from_operations:,.2f}")
+        st.write(f"Net Cash from Investing Activities: ₹{cash_flow.cash_from_investing:,.2f}")
+        st.write(f"Net Cash from Financing Activities: ₹{cash_flow.cash_from_financing:,.2f}")
 
     with tab_soce:
         st.write(f"Equity Share Capital -- Closing: ₹{soce.equity_share_capital.closing:,.2f}")
