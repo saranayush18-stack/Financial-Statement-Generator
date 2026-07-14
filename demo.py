@@ -1,7 +1,7 @@
 """
 End-to-end demo / smoke test for the Schedule III Engine.
 
-Run with:  python -m schedule3_engine.demo
+Run with:  python demo.py   (from inside this folder)
 
 Pipeline:
 1. Parse a sample Trial Balance (Excel)
@@ -19,26 +19,26 @@ import sys
 from datetime import date
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from schedule3_engine.models import Company
-from schedule3_engine.core.tb_parser import parse_trial_balance
-from schedule3_engine.core.mapping_store import MappingStore, resolve_mapping
-from schedule3_engine.core.validator import validate, summarize_issues
-from schedule3_engine.core.statement_generator import (
+from models import Company
+from core.tb_parser import parse_trial_balance
+from core.mapping_store import MappingStore, resolve_mapping
+from core.validator import validate, summarize_issues
+from core.statement_generator import (
     generate_balance_sheet, generate_profit_and_loss, generate_cash_flow_indirect,
     carry_profit_into_reserves
 )
-from schedule3_engine.core.notes_generator import generate_notes
-from schedule3_engine.core.ratios import compute_ratios
-from schedule3_engine.core.soce_generator import generate_soce, soce_reconciles_to_balance_sheet
-from schedule3_engine.core.ageing import (
+from core.notes_generator import generate_notes
+from core.ratios import compute_ratios
+from core.soce_generator import generate_soce, soce_reconciles_to_balance_sheet
+from core.ageing import (
     parse_ageing_file, build_ageing_grid, unavailable_grid, ageing_validation_issues,
 )
-from schedule3_engine.export.excel_export import build_workbook, save_workbook
-from schedule3_engine.export.pdf_export import build_pdf
-from schedule3_engine.sample_data.generate_sample_tb import generate as generate_sample_tb
-from schedule3_engine.sample_data.generate_sample_ageing import (
+from export.excel_export import build_workbook, save_workbook
+from export.pdf_export import build_pdf
+from sample_data.generate_sample_tb import generate as generate_sample_tb
+from sample_data.generate_sample_ageing import (
     generate_receivables_ageing, generate_payables_ageing,
 )
 
@@ -98,7 +98,7 @@ def run_demo(output_dir: str = ".") -> dict:
     soce = generate_soce(bs, pnl)
     soce_ok = soce_reconciles_to_balance_sheet(soce, bs)
     if not soce_ok:
-        from schedule3_engine.models import ValidationIssue
+        from models import ValidationIssue
         issues.append(ValidationIssue(
             severity="ERROR", code="SOCE_MISMATCH", ledger_name=None,
             message="Statement of Changes in Equity closing balances do not reconcile "

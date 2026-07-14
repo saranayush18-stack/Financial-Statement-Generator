@@ -17,7 +17,7 @@ Design notes
   and any manual mapping is persisted via mapping_store.py so the engine
   effectively "learns" the client's chart of accounts over time.
 """
-from schedule3_engine.models import Statement, CurrentNonCurrent, Nature
+from models import Statement, CurrentNonCurrent, Nature
 
 BS = Statement.BALANCE_SHEET
 PL = Statement.PROFIT_AND_LOSS

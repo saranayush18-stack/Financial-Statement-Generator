@@ -15,13 +15,13 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
-from schedule3_engine.models import Company, TrialBalance, MappingEntry
-from schedule3_engine.core.statement_generator import BalanceSheet, ProfitAndLoss, CashFlowStatement
-from schedule3_engine.core.notes_generator import Note
-from schedule3_engine.core.ratios import RatioResult
-from schedule3_engine.models import ValidationIssue
-from schedule3_engine.core.soce_generator import StatementOfChangesInEquity
-from schedule3_engine.core.ageing import AgeingGrid, BUCKET_LABELS, CATEGORY_LABELS
+from models import Company, TrialBalance, MappingEntry
+from core.statement_generator import BalanceSheet, ProfitAndLoss, CashFlowStatement
+from core.notes_generator import Note
+from core.ratios import RatioResult
+from models import ValidationIssue
+from core.soce_generator import StatementOfChangesInEquity
+from core.ageing import AgeingGrid, BUCKET_LABELS, CATEGORY_LABELS
 
 FONT_NAME = "Arial"
 HEADER_FILL = PatternFill("solid", fgColor="1F4E79")

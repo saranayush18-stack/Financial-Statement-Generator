@@ -18,8 +18,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional
 
-from schedule3_engine.data.classification_rules import RULES, normalize
-from schedule3_engine.models import MappingEntry, Statement, CurrentNonCurrent, Nature
+from data.classification_rules import RULES, normalize
+from models import MappingEntry, Statement, CurrentNonCurrent, Nature
 
 
 @dataclass

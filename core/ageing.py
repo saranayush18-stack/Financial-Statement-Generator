@@ -33,7 +33,7 @@ from typing import Optional
 
 import pandas as pd
 
-from schedule3_engine.models import ValidationIssue
+from models import ValidationIssue
 
 BUCKET_LABELS = [
     "Not Due",

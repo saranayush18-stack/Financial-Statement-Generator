@@ -17,11 +17,11 @@ from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, NextPageTemplate
 )
 
-from schedule3_engine.models import Company
-from schedule3_engine.core.statement_generator import BalanceSheet, ProfitAndLoss, CashFlowStatement
-from schedule3_engine.core.notes_generator import Note, STANDARD_ACCOUNTING_POLICIES
-from schedule3_engine.core.soce_generator import StatementOfChangesInEquity
-from schedule3_engine.core.ageing import AgeingGrid, BUCKET_LABELS, CATEGORY_LABELS
+from models import Company
+from core.statement_generator import BalanceSheet, ProfitAndLoss, CashFlowStatement
+from core.notes_generator import Note, STANDARD_ACCOUNTING_POLICIES
+from core.soce_generator import StatementOfChangesInEquity
+from core.ageing import AgeingGrid, BUCKET_LABELS, CATEGORY_LABELS
 
 NAVY = colors.HexColor("#1F4E79")
 LIGHT_BLUE = colors.HexColor("#D9E1F2")

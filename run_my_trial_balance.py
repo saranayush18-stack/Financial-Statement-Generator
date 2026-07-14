@@ -3,11 +3,11 @@ Run the Schedule III engine on YOUR OWN Trial Balance.
 
 HOW TO USE
 ----------
-1. Place this file in the SAME folder that contains the `schedule3_engine`
-   folder (i.e. one level above it -- NOT inside it).
+1. This file lives INSIDE the schedule3_engine folder, alongside models.py,
+   streamlit_app.py, etc. Keep it there.
 2. Edit the CONFIG section below: point TB_PATH at your Excel/CSV Trial
    Balance and fill in your company details.
-3. Run:  python run_my_trial_balance.py
+3. Run (from inside this folder):  python run_my_trial_balance.py
 
 WHAT YOUR TRIAL BALANCE FILE SHOULD LOOK LIKE
 ----------------------------------------------
@@ -34,20 +34,20 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from schedule3_engine.models import Company
-from schedule3_engine.core.tb_parser import parse_trial_balance
-from schedule3_engine.core.mapping_store import MappingStore, resolve_mapping
-from schedule3_engine.core.validator import validate, summarize_issues
-from schedule3_engine.core.statement_generator import (
+from models import Company
+from core.tb_parser import parse_trial_balance
+from core.mapping_store import MappingStore, resolve_mapping
+from core.validator import validate, summarize_issues
+from core.statement_generator import (
     generate_balance_sheet, generate_profit_and_loss, generate_cash_flow_indirect,
     carry_profit_into_reserves,
 )
-from schedule3_engine.core.notes_generator import generate_notes
-from schedule3_engine.core.ratios import compute_ratios
-from schedule3_engine.core.soce_generator import generate_soce, soce_reconciles_to_balance_sheet
-from schedule3_engine.core.ageing import parse_ageing_file, build_ageing_grid, unavailable_grid, ageing_validation_issues
-from schedule3_engine.export.excel_export import build_workbook, save_workbook
-from schedule3_engine.export.pdf_export import build_pdf
+from core.notes_generator import generate_notes
+from core.ratios import compute_ratios
+from core.soce_generator import generate_soce, soce_reconciles_to_balance_sheet
+from core.ageing import parse_ageing_file, build_ageing_grid, unavailable_grid, ageing_validation_issues
+from export.excel_export import build_workbook, save_workbook
+from export.pdf_export import build_pdf
 
 
 # ============================================================================

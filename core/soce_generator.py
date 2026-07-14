@@ -29,7 +29,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from schedule3_engine.core.statement_generator import BalanceSheet, ProfitAndLoss, LineItem
+from core.statement_generator import BalanceSheet, ProfitAndLoss, LineItem
 
 # Ordered: first keyword match wins. Ledgers not matching anything fall
 # into "Surplus in Statement of Profit and Loss" (the standard catch-all

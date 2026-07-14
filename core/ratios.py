@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from schedule3_engine.core.statement_generator import BalanceSheet, ProfitAndLoss
+from core.statement_generator import BalanceSheet, ProfitAndLoss
 
 
 def _safe_div(numerator: float, denominator: float) -> float | None:

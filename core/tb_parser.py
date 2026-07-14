@@ -16,7 +16,7 @@ from typing import Optional
 
 import pandas as pd
 
-from schedule3_engine.models import LedgerEntry, TrialBalance, Company
+from models import LedgerEntry, TrialBalance, Company
 
 # Header aliases seen across Tally / Busy / Zoho / QuickBooks / SAP exports.
 HEADER_ALIASES = {

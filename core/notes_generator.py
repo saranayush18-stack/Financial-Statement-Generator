@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from schedule3_engine.core.statement_generator import BalanceSheet, ProfitAndLoss, LineItem
+from core.statement_generator import BalanceSheet, ProfitAndLoss, LineItem
 
 
 @dataclass

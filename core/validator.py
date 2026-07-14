@@ -7,7 +7,7 @@ than surfacing as a wrong Balance Sheet.
 """
 from __future__ import annotations
 
-from schedule3_engine.models import (
+from models import (
     TrialBalance, MappingEntry, ValidationIssue, Nature, Statement
 )
 

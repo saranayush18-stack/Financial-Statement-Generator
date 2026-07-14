@@ -23,8 +23,8 @@ from contextlib import closing
 from pathlib import Path
 from typing import Optional
 
-from schedule3_engine.models import MappingEntry, Statement, CurrentNonCurrent, Nature
-from schedule3_engine.data.classification_rules import normalize
+from models import MappingEntry, Statement, CurrentNonCurrent, Nature
+from data.classification_rules import normalize
 
 DEFAULT_DB_PATH = "schedule3_mappings.db"
 
@@ -227,7 +227,7 @@ def resolve_mapping(
     Full resolution order: company override -> global learned -> rule engine.
     Returns None if nothing matches (caller should prompt the user).
     """
-    from schedule3_engine.core.classifier import classify_ledger, suggestion_to_mapping_entry
+    from core.classifier import classify_ledger, suggestion_to_mapping_entry
 
     company_hit = store.get_company_mapping(company_id, ledger_name)
     if company_hit:
