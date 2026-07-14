@@ -23,23 +23,23 @@ from pathlib import Path
 
 import streamlit as st
 
-from schedule3_engine.models import Company, MappingEntry, Statement, CurrentNonCurrent, Nature
-from schedule3_engine.core.tb_parser import parse_trial_balance
-from schedule3_engine.core.mapping_store import MappingStore, resolve_mapping
-from schedule3_engine.core.validator import validate, summarize_issues
-from schedule3_engine.core.statement_generator import (
+from models import Company, MappingEntry, Statement, CurrentNonCurrent, Nature
+from core.tb_parser import parse_trial_balance
+from core.mapping_store import MappingStore, resolve_mapping
+from core.validator import validate, summarize_issues
+from core.statement_generator import (
     generate_balance_sheet, generate_profit_and_loss, generate_cash_flow_indirect,
     carry_profit_into_reserves,
 )
-from schedule3_engine.core.notes_generator import generate_notes
-from schedule3_engine.core.ratios import compute_ratios
-from schedule3_engine.core.soce_generator import generate_soce, soce_reconciles_to_balance_sheet
-from schedule3_engine.core.ageing import (
+from core.notes_generator import generate_notes
+from core.ratios import compute_ratios
+from core.soce_generator import generate_soce, soce_reconciles_to_balance_sheet
+from core.ageing import (
     parse_ageing_file, build_ageing_grid, unavailable_grid, ageing_validation_issues,
 )
-from schedule3_engine.export.excel_export import build_workbook, save_workbook
-from schedule3_engine.export.pdf_export import build_pdf
-from schedule3_engine.data.classification_rules import SCHEDULE_III_STRUCTURE, RULES
+from export.excel_export import build_workbook, save_workbook
+from export.pdf_export import build_pdf
+from data.classification_rules import SCHEDULE_III_STRUCTURE, RULES
 
 st.set_page_config(page_title="AI Financial Statement Generator", page_icon="📊", layout="wide")
 
